@@ -1,9 +1,15 @@
 import { Injectable } from '@angular/core';
-import { HEROES } from './mock-heroes';
+
+import { Hero } from './hero';//Hero Class
+import { HEROES } from './mock-heroes';//Hero mock data
+
+
 
 @Injectable()
 export class HeroService {
   getHeroes() {
-    return HEROES;
+    console.log('HEROES in HeroService Class');
+    console.log(HEROES);
+     return Promise.resolve(HEROES);
   }
 }
