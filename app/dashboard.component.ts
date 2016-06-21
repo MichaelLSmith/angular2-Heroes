@@ -1,22 +1,33 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router-deprecated';
+
 
 import { Hero } from './hero';
 import { HeroService } from './hero.service';
+
+console.dir(HeroService);
 
 @Component({
   selector: 'my-dashboard',
   templateUrl: 'app/dashboard.component.html'
 })
 
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   heroes: Hero[] = [];
 
-  constructor(private HeroService: HeroService) { }
+  constructor(
+    private router: Router,
+    private heroService: HeroService) {
+  }
 
   ngOnInit() {
-    this.HeroService.getHeroes()
+    console.dir(this.heroService);
+    this.heroService.getHeroes()
       .then(heroes => this.heroes = heroes.slice(1, 5));
   }
 
-  gotoDetail() { }
+  gotoDetail(hero: Hero) {
+    let link = ['HeroDetail', { id: hero.id}];
+    this.router.navigate(link);
+  }
 }

@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var hero_detail_component_1 = require('./hero-detail.component');
 var hero_service_1 = require('./hero.service');
-console.log(hero_service_1.HeroService);
 var HeroesComponent = (function () {
     function HeroesComponent(heroService) {
         this.heroService = heroService;

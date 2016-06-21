@@ -4,8 +4,6 @@ import { Hero } from './hero';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
 
-console.log(HeroService);
-
 @Component({
   selector: 'my-heroes',
   template: `
